@@ -21,14 +21,13 @@ body {
   }
 }
 
-
-.flex-center {
+%flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flex-between {
+%flex-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -452,6 +451,7 @@ body {
 	background: $color-white;
 }
 .hero-content__customer {
+  @extend %flex-center;
 	flex: 1;
 	gap: 10px;
 	h4 {
@@ -791,6 +791,7 @@ body {
 	}
 }
 .trending__icon {
+  @extend %flex-center;
 	width: 24px;
 	height: 24px;
 	border-radius: 100%;
@@ -802,6 +803,7 @@ body {
 	}
 }
 .trending__image {
+  @extend %flex-center;
 	flex: 1;
 	position: relative;
 	padding: 32px 64px;
@@ -862,6 +864,7 @@ body {
 
 // Subscription----------------------------------------------------------------------------------------------
 .subscription {
+  @extend %flex-center;
 	padding: 64px;
 	background-color: $primary-color;
 	background-image: url('../../assets/subscribe_bg.png');
@@ -968,6 +971,7 @@ body {
 }
 .footer__social {
 	li {
+    @extend %flex-center; 
 		width: 42px;
 		height: 42px;
 		background-color: $secondary-color;
