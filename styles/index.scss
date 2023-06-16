@@ -931,6 +931,7 @@ body {
 
 // Footer-------------------------------------------------------------------------------------------------------------
 .footer {
+  @extend %flex-between;
 	width: 100%;
 	padding: 20px 40px;
 	background: $color-white;
