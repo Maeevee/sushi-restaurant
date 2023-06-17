@@ -4,6 +4,40 @@
 
 @import 'variables';
 
+@mixin customBackground($image, $color:$primary-color){
+  background: {
+    image: $image;
+    color: $color;
+    position: center;
+    repeat: no-repeat;
+    size: contain;
+  }
+  
+}
+
+@mixin text($font-size, $font-weight, $font-family, $color){
+  font-size: $font-size;
+  font-weight: $font-weight;
+  font-family: $font-family;
+  color: $color;
+
+}
+
+@mixin displayFlex ($justify-content, $align-items){
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+%flex-center {
+  @include displayFlex (center, center);
+}
+
+%flex-between {
+  @include displayFlex (space-between, center);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -21,42 +55,21 @@ body {
   }
 }
 
-%flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-%flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .sushi__subtitle {
-  font-size: 18px;
-  font-weight: 400;
-  font-family: $plus-jakarta-sans;
-  color: $primary-color;
+  @include text(18px, 400, $plus-jakarta-sans, $primary-color);
   opacity: 0.8;
   letter-spacing: -0.01em;
 }
 
 .sushi__title {
-  font-size: 64px;
-  font-weight: 600;
-  font-family: $playfair-display;
-  color: $secondary-color;
+  @include text(65px, 600, $playfair-display, $secondary-color);
   margin-top: 16px;
 }
 
 .sushi__description {
-  font-size: 18px;
-  font-weight: 400;
-  font-family: $plus-jakarta-sans;
+  @include text(18px, 400, $plus-jakarta-sans, $secondary-color);
   line-height: 36px;
   letter-spacing: -0.01em;
-  color: $secondary-color;
   opacity: 0.8;
   margin: 32px 0px;
 }
@@ -284,6 +297,7 @@ body {
 
 // Header----------------------------------------------------------------------------------------------------
 .header__nav {
+  flex: auto;
 	display: flex;
 	overflow: hidden;
 }
@@ -293,12 +307,9 @@ body {
 	position: relative;
 	padding: 20px;
 	h4 {
+    @include text(24px, 700, $playfair-display, $color-white);
 		padding-left: 30px;
-		font-weight: 700;
-		font-size: 24px;
 		text-transform: uppercase;
-		font-family: $playfair-display;
-		color: $color-white;
 		opacity: 0.8;
 	}
 }
@@ -310,18 +321,13 @@ body {
 	z-index: -1;
 }
 .header__menu {
+  @include displayFlex (flex-end, center);
 	padding: 20px;
 	flex: 1.236;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
 	gap: 64px;
 	list-style: none;
 	li {
-		font-weight: 500;
-		font-family: $plus-jakarta-sans;
-		color: $secondary-color;
-		font-size: 16px;
+    @include text(16px, 500, $plus-jakarta-sans, $secondary-color);
 		text-transform: uppercase;
 		line-height: 20px;
 		cursor: pointer;
@@ -333,11 +339,9 @@ body {
 	}
 }
 .header__menu-mobile {
+  @include displayFlex (flex-end, center);
 	padding: 20px;
 	flex: 1.236;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
 	gap: 64px;
 	list-style: none;
 	display: none;
@@ -363,14 +367,11 @@ body {
 		object-fit: contain;
 	}
 	h2 {
+    @include text(120px, 700, $playfair-display, $color-white);
 		position: absolute;
 		bottom: 0;
 		padding: 20px;
-		font-family: $playfair-display;
-		font-weight: 700;
-		font-size: 120px;
 		line-height: 138px;
-		color: $color-white;
 	}
 }
 .hero-image__overlay {
@@ -393,17 +394,11 @@ body {
 	justify-content: center;
 	flex-direction: column;
 	h1 {
-		font-size: 80px;
-		font-weight: 600px;
-		font-family: $playfair-display;
-		color: $secondary-color;
+    @include text(80px, 600px, $playfair-display, $secondary-color);
 	}
 	p {
+    @include text(18px, 400, $plus-jakarta-sans, $secondary-color);
 		margin: 32px 0 0 32px;
-		font-family: $plus-jakarta-sans;
-		color: $secondary-color;
-		font-size: 18px;
-		font-weight: 400;
 	}
 }
 .hero-content__buttons {
@@ -413,6 +408,7 @@ body {
 	gap: 36px;
 }
 .hero-content__order-button {
+  @include text(18px, 500, $plus-jakarta-sans, $color-white);
 	padding: 20px;
 	border-radius: 36px;
 	min-width: 212px;
@@ -420,21 +416,16 @@ body {
 	border: none;
 	background: $secondary-color;
 	cursor: pointer;
-	color: $color-white;
-	font-weight: 500;
-	font-size: 18px;
 	line-height: 23px;
 }
 .hero-content__play-button {
+  @include text(16px, unset, $plus-jakarta-sans, $black-200);
 	border: none;
 	outline: none;
 	background: transparent;
 	display: flex;
 	align-items: center;
-	font-size: 16px;
 	line-height: 19px;
-	color: $black-200;
-	font-family: $plus-jakarta-sans;
 	cursor: pointer;
 	img {
 		margin-right: 12px;
@@ -455,15 +446,10 @@ body {
 	flex: 1;
 	gap: 10px;
 	h4 {
-		font-size: 62px;
-		font-weight: 400;
-		font-family: $playfair-display;
+    @include text(62px, 400, $playfair-display, $secondary-color)
 	}
 	p {
-		font-size: 16px;
-		font-weight: 400;
-		font-family: $plus-jakarta-sans;
-		color: $secondary-color;
+    @include text(16px, 400, $plus-jakarta-sans, $secondary-color);
 		opacity: 0.5;
 	}
 }
@@ -481,11 +467,8 @@ body {
 		object-fit: contain;
 	}
 	p {
-		font-size: 12px;
-		font-weight: 400;
+    @include text(12px, 400, $plus-jakarta-sans, $secondary-color);
 		line-height: 32px;
-		font-family: $plus-jakarta-sans;
-		color: $secondary-color;
 		opacity: 0.8;
 	}
 }
@@ -504,13 +487,11 @@ body {
 	background: $color-white;
 	position: relative;
 	div {
+    @include customBackground(none, $color-white);
 		padding: 32px 64px;
 		flex: 1;
 		display: flex;
 		align-items: center;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
 	}
 }
 .about-us__image-sushi3 {
@@ -529,6 +510,7 @@ body {
 	}
 }
 .about-us__button {
+  @include text(18px, 500, $plus-jakarta-sans, $color-white);
 	position: absolute;
 	right: 0;
 	padding: 12px 32px;
@@ -537,10 +519,6 @@ body {
 	border-radius: 32px 0 0 32px;
 	border: 0;
 	outline: 0;
-	color: $color-white;
-	font-family: $plus-jakarta-sans;
-	font-weight: 500;
-	font-size: 18px;
 	line-height: 23px;
 	cursor: pointer;
 	img {
@@ -558,22 +536,15 @@ body {
 
 // Popular-----------------------------------------------------------------------------------------
 .popular-foods {
+  @include customBackground(url("../../assets/popular_bg.png"));
 	padding: 64px;
 	display: flex;
 	flex-direction: column;
-	background-color: $primary-color;
-	background-image: url("../../assets/popular_bg.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
 	overflow: hidden;
 }
 .popular-foods__title {
-	font-size: 56px;
-	font-family: $playfair-display;
-	font-weight: 600;
+  @include text(56px, 600, $playfair-display, $color-white);
 	line-height: 78px;
-	color: $color-white;
 	text-align: center;
 }
 .popular-foods__filters {
@@ -585,6 +556,7 @@ body {
 	gap: 24px;
 }
 .popular-foods__filter-btn {
+  @include text(16px, 300, $plus-jakarta-sans, $color-white);
 	padding: 10px 28px;
 	display: flex;
 	flex-direction: row;
@@ -593,11 +565,7 @@ body {
 	background: rgba(255, 255, 255, 0.05);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 46px;
-	font-size: 16px;
-	font-weight: 300px;
 	line-height: 25px;
-	font-family: $plus-jakarta-sans;
-	color: $color-white;
 	cursor: pointer;
 	img {
 		width: 36px;
@@ -614,22 +582,17 @@ body {
 	color: $primary-color;
 }
 .popular-foods__catalogue {
+  @include displayFlex (center, flex-end);
 	margin-top: 64px;
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
 	flex-wrap: wrap;
 	gap: 56px;
 }
 .popular-foods__button {
+  @include text(18px, 500, $plus-jakarta-sans, $color-white);
 	width: fit-content;
 	padding: 20px 30px;
 	margin: 80px auto 0;
-	font-weight: 500;
-	font-size: 18px;
 	line-height: 23px;
-	font-family: $plus-jakarta-sans;
-	color: $color-white;
 	border: none;
 	outline: none;
 	background: $secondary-color;
@@ -659,15 +622,13 @@ body {
 	object-fit: contain;
 }
 .popular-foods__card-title {
+  @include text(24px, 600, $playfair-display, $color-white);
 	margin-top: 47px;
-	font-weight: 600;
-	font-size: 24px;
 	line-height: 32px;
-	font-family: $playfair-display;
-	color: $color-white;
 	text-align: center;
 }
 .popular-foods__card-details {
+  @extend %flex-between;
 	width: 100%;
 	margin-top: 32px;
 }
@@ -681,17 +642,11 @@ body {
 		object-fit: contain;
 	}
 	p {
-		font-size: 20px;
-		font-weight: 300;
-		font-family: $plus-jakarta-sans;
-		color: $color-white;
+    @include text(20px, 300, $plus-jakarta-sans, $color-white);
 	}
 }
 .popular-foods__card-price {
-	font-size: 20px;
-	font-weight: 500;
-	font-family: $plus-jakarta-sans;
-	color: $color-white;
+  @include text(20px, 500, $plus-jakarta-sans, $color-white);
 }
 .popular-foods__card.active-card {
 	background: $color-white;
@@ -728,6 +683,7 @@ body {
 	overflow: hidden;
 }
 .trending__discover {
+  @include displayFlex (center, center);
 	position: absolute;
 	top: 44%;
 	left: 44%;
@@ -737,15 +693,9 @@ body {
 	border-radius: 100%;
 	background-color: $secondary-color;
 	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	p {
-		font-size: 18px;
-		font-weight: 500;
-		font-family: $plus-jakarta-sans;
+    @include text(18px, 500, $plus-jakarta-sans,  $color-white);
 		text-transform: uppercase;
-		color: $color-white;
 	}
 }
 .trending-sushi {
@@ -783,11 +733,8 @@ body {
 		min-width: 210px;
 	}
 	p {
+    @include text(16px, 500, $plus-jakarta-sans, $secondary-color);
 		flex: 1;
-		font-size: 16px;
-		font-weight: 500;
-		font-family: $plus-jakarta-sans;
-		color: $secondary-color;
 	}
 }
 .trending__icon {
@@ -804,13 +751,10 @@ body {
 }
 .trending__image {
   @extend %flex-center;
+  @include customBackground(none, $color-white);
 	flex: 1;
 	position: relative;
 	padding: 32px 64px;
-	background-color: $color-white;
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
 	img {
 		width: 254px;
 		height: 260px;
@@ -865,29 +809,19 @@ body {
 // Subscription----------------------------------------------------------------------------------------------
 .subscription {
   @extend %flex-center;
+  @include customBackground(url('../../assets/subscribe_bg.png'));
 	padding: 64px;
-	background-color: $primary-color;
-	background-image: url('../../assets/subscribe_bg.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
 	flex-direction: column;
 	overflow: hidden;
 	h2 {
-		font-size: 88px;
-		font-family: $playfair-display;
-		font-weight: 600;
+    @include text(88px, 600, $playfair-display, $color-white);
 		line-height: 123px;
-		color: $color-white;
 		text-align: center;
 	}
 	p {
-		font-size: 18px;
-		font-family: $plus-jakarta-sans;
-		font-weight: 300;
+    @include text(18px, 300, $plus-jakarta-sans, rgba(255, 255, 255, 0.8));
 		line-height: 36px;
 		margin-top: 32px;
-		color: rgba(255, 255, 255, 0.8);
 	}
 }
 .subscription__form {
@@ -899,11 +833,8 @@ body {
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-radius: 46px;
 	input {
+    @include text(16px, 400, $plus-jakarta-sans, $color-white);
 		flex: 1;
-		font-size: 16px;
-		font-weight: 400px;
-		font-family: $plus-jakarta-sans;
-		color: $color-white;
 		opacity: 0.5;
 		background: transparent;
 		border: none;
@@ -914,12 +845,9 @@ body {
 		}
 	}
 	button {
+    @include text(16px, 500, $plus-jakarta-sans, $color-white);
 		padding: 20px;
 		min-width: 180px;
-		font-size: 16px;
-		font-weight: 500;
-		font-family: $plus-jakarta-sans;
-		color: $color-white;
 		text-align: center;
 		background: $black-400;
 		border-radius: 46px;
@@ -950,11 +878,8 @@ body {
 	}
 }
 .footer__logo {
-	font-size: 24px;
-	font-weight: bold;
-	font-family: $playfair-display;
+  @include text(24px, bold, $playfair-display, $secondary-color);
 	text-transform: uppercase;
-	color: $secondary-color;
 	cursor: pointer;
 	span {
 		color: $primary-color;
@@ -962,11 +887,8 @@ body {
 }
 .footer__nav {
 	li {
-		font-size: 16px;
-		font-weight: 500;
-		font-family: $plus-jakarta-sans;
+    @include text(16px, 500, $plus-jakarta-sans, $secondary-color);
 		text-transform: uppercase;
-		color: $secondary-color;
 		cursor: pointer;
 	}
 }
