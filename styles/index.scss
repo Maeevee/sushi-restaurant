@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
@@ -58,21 +60,21 @@ a {
 }
 
 .sushi__subtitle {
-@include text(18px, 400, $plus-jakarta-sans, $primary-color);
-opacity: 0.8;
+@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $primary-color);
+opacity: $opacity-medium;
 letter-spacing: -0.01em;
 }
 
 .sushi__title {
-@include text(65px, 600, $playfair-display, $secondary-color);
+@include text(65px, $font-weight-bolder, $playfair-display, $secondary-color);
 margin-top: 16px;
 }
 
 .sushi__description {
-@include text(18px, 400, $plus-jakarta-sans, $secondary-color);
+@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
 line-height: 36px;
 letter-spacing: -0.01em;
-opacity: 0.8;
+opacity: $opacity-medium;
 margin: 32px 0px;
 }
 
@@ -309,10 +311,10 @@ flex: auto;
 	position: relative;
 	padding: 20px;
 	h4 {
-	@include text(24px, 700, $playfair-display, $color-white);
+	@include text(24px, $font-weight-bold, $playfair-display, $color-white);
 		padding-left: 30px;
 		text-transform: uppercase;
-		opacity: 0.8;
+		opacity: $opacity-medium;
 	}
 }
 .header__logo-overlay {
@@ -329,7 +331,7 @@ flex: auto;
 	gap: 64px;
 	list-style: none;
 	li {
-	@include text(16px, 500, $plus-jakarta-sans, $secondary-color);
+	@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
 		text-transform: uppercase;
 		line-height: 20px;
 		cursor: pointer;
@@ -369,7 +371,7 @@ flex: auto;
 		object-fit: contain;
 	}
 	h2 {
-	@include text(120px, 700, $playfair-display, $color-white);
+	@include text(120px, $font-weight-bold, $playfair-display, $color-white);
 		position: absolute;
 		bottom: 0;
 		padding: 20px;
@@ -396,10 +398,10 @@ flex: auto;
 	justify-content: center;
 	flex-direction: column;
 	h1 {
-	@include text(80px, 600px, $playfair-display, $secondary-color);
+	@include text(80px, $font-weight-bolder, $playfair-display, $secondary-color);
 	}
 	p {
-	@include text(18px, 400, $plus-jakarta-sans, $secondary-color);
+	@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
 		margin: 32px 0 0 32px;
 	}
 }
@@ -410,7 +412,7 @@ flex: auto;
 	gap: 36px;
 }
 .hero-content__order-button {
-@include text(18px, 500, $plus-jakarta-sans, $color-white);
+@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
 	padding: 20px;
 	border-radius: 36px;
 	min-width: 212px;
@@ -448,11 +450,11 @@ flex: auto;
 	flex: 1;
 	gap: 10px;
 	h4 {
-	@include text(62px, 400, $playfair-display, $secondary-color)
+	@include text(62px, $font-weight-lighter, $playfair-display, $secondary-color)
 	}
 	p {
-	@include text(16px, 400, $plus-jakarta-sans, $secondary-color);
-		opacity: 0.5;
+	@include text(16px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
+		opacity: $opacity-light;
 	}
 }
 .hero-content__review {
@@ -469,9 +471,9 @@ flex: auto;
 		object-fit: contain;
 	}
 	p {
-	@include text(12px, 400, $plus-jakarta-sans, $secondary-color);
+	@include text(12px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
 		line-height: 32px;
-		opacity: 0.8;
+		opacity: $opacity-medium;
 	}
 }
 
@@ -512,7 +514,7 @@ flex: auto;
 	}
 }
 .about-us__button {
-	@include text(18px, 500, $plus-jakarta-sans, $color-white);
+	@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
 	position: absolute;
 	right: 0;
 	padding: 12px 32px;
@@ -545,7 +547,7 @@ flex: auto;
 	overflow: hidden;
 }
 .popular-foods__title {
-@include text(56px, 600, $playfair-display, $color-white);
+@include text(56px, $font-weight-bolder, $playfair-display, $color-white);
 	line-height: 78px;
 	text-align: center;
 }
@@ -558,7 +560,7 @@ flex: auto;
 	gap: 24px;
 }
 .popular-foods__filter-btn {
-@include text(16px, 300, $plus-jakarta-sans, $color-white);
+@include text(16px, $font-weight-light, $plus-jakarta-sans, $color-white);
 	padding: 10px 28px;
 	display: flex;
 	flex-direction: row;
@@ -590,7 +592,7 @@ flex: auto;
 	gap: 56px;
 }
 .popular-foods__button {
-@include text(18px, 500, $plus-jakarta-sans, $color-white);
+@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
 	width: fit-content;
 	padding: 20px 30px;
 	margin: 80px auto 0;
@@ -624,7 +626,7 @@ flex: auto;
 	object-fit: contain;
 }
 .popular-foods__card-title {
-@include text(24px, 600, $playfair-display, $color-white);
+@include text(24px, $font-weight-bolder, $playfair-display, $color-white);
 	margin-top: 47px;
 	line-height: 32px;
 	text-align: center;
@@ -644,11 +646,11 @@ flex: auto;
 		object-fit: contain;
 	}
 	p {
-	@include text(20px, 300, $plus-jakarta-sans, $color-white);
+	@include text(20px, $font-weight-light, $plus-jakarta-sans, $color-white);
 	}
 }
 .popular-foods__card-price {
-@include text(20px, 500, $plus-jakarta-sans, $color-white);
+@include text(20px, $font-weight-base, $plus-jakarta-sans, $color-white);
 }
 .popular-foods__card.active-card {
 	background: $color-white;
@@ -696,7 +698,7 @@ flex: auto;
 	background-color: $secondary-color;
 	cursor: pointer;
 	p {
-	@include text(18px, 500, $plus-jakarta-sans,  $color-white);
+	@include text(18px, $font-weight-base, $plus-jakarta-sans,  $color-white);
 		text-transform: uppercase;
 	}
 }
@@ -735,7 +737,7 @@ flex: auto;
 		min-width: 210px;
 	}
 	p {
-	@include text(16px, 500, $plus-jakarta-sans, $secondary-color);
+	@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
 		flex: 1;
 	}
 }
@@ -816,12 +818,12 @@ flex: auto;
 	flex-direction: column;
 	overflow: hidden;
 	h2 {
-	@include text(88px, 600, $playfair-display, $color-white);
+	@include text(88px, $font-weight-bolder, $playfair-display, $color-white);
 		line-height: 123px;
 		text-align: center;
 	}
 	p {
-	@include text(18px, 300, $plus-jakarta-sans, rgba(255, 255, 255, 0.8));
+	@include text(18px, $font-weight-light, $plus-jakarta-sans, rgba(255, 255, 255, 0.8));
 		line-height: 36px;
 		margin-top: 32px;
 	}
@@ -835,19 +837,19 @@ flex: auto;
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	border-radius: 46px;
 	input {
-	@include text(16px, 400, $plus-jakarta-sans, $color-white);
+	@include text(16px, $font-weight-lighter, $plus-jakarta-sans, $color-white);
 		flex: 1;
-		opacity: 0.5;
+		opacity: $opacity-light;
 		background: transparent;
 		border: none;
 		outline: none;
 		&::placeholder {
 			color: $color-white;
-			opacity: 0.5;
+			opacity: $opacity-light;
 		}
 	}
 	button {
-	@include text(16px, 500, $plus-jakarta-sans, $color-white);
+	@include text(16px, $font-weight-base, $plus-jakarta-sans, $color-white);
 		padding: 20px;
 		min-width: 180px;
 		text-align: center;
@@ -880,7 +882,7 @@ flex: auto;
 	}
 }
 .footer__logo {
-@include text(24px, bold, $playfair-display, $secondary-color);
+@include text(24px, $font-weight-bold, $playfair-display, $secondary-color);
 	text-transform: uppercase;
 	cursor: pointer;
 	span {
@@ -889,7 +891,7 @@ flex: auto;
 }
 .footer__nav {
 	li {
-	@include text(16px, 500, $plus-jakarta-sans, $secondary-color);
+	@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
 		text-transform: uppercase;
 		cursor: pointer;
 	}

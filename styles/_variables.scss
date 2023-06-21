@@ -1,5 +1,8 @@
+// Fonts
 $playfair-display: "Playfair Display", serif;
 $plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+
+// Colors
 $primary-color: #b1454a;
 $secondary-color: #121212;
 $black-200: #020202;
@@ -9,3 +12,14 @@ $black-500: #555555;
 $gray-100: #888888;
 $color-white: #fff;
 $color-creamson: #fff0de;
+
+// Font weights
+$font-weight-base: 500;
+$font-weight-bolder: $font-weight-base + 100; // 600
+$font-weight-bold: $font-weight-base + 200; // 700
+$font-weight-lighter: $font-weight-base - 100; // 400
+$font-weight-light: $font-weight-base - 200; // 300
+
+// Opacity
+$opacity-medium: 0.8;
+$opacity-light: math.div($opacity-medium, 1.6); // 0,5
