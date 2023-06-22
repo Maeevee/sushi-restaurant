@@ -313,27 +313,27 @@ flex: auto;
 	position: relative;
 	padding: 20px;
 	h4 {
-	@include text(24px, $font-weight-bold, $playfair-display, $color-white);
+		@include text(24px, $font-weight-bold, $playfair-display, $color-white);
 		padding-left: 30px;
 		text-transform: uppercase;
 		opacity: $opacity-medium;
 	}
-}
-.header__logo-overlay {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	background-color: $primary-color;
-	z-index: -1;
+	&-overlay {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		background-color: $primary-color;
+		z-index: -1;
+	}
 }
 .header__menu {
-@include displayFlex (flex-end, center);
+	@include displayFlex (flex-end, center);
 	padding: 20px;
 	flex: 1.236;
 	gap: 64px;
 	list-style: none;
 	li {
-	@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
+		@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
 		text-transform: uppercase;
 		line-height: 20px;
 		cursor: pointer;
@@ -345,7 +345,7 @@ flex: auto;
 	}
 }
 .header__menu-mobile {
-@include displayFlex (flex-end, center);
+	@include displayFlex (flex-end, center);
 	padding: 20px;
 	flex: 1.236;
 	gap: 64px;
@@ -360,122 +360,123 @@ flex: auto;
 	display: flex;
 	min-height: calc(100vh - 74px);
 	overflow: hidden;
-}
-.hero-image {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	z-index: 5;
-	img {
-		width: 120%;
-		height: 100%;
-		object-fit: contain;
+	&-image {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 5;
+		img {
+			width: 120%;
+			height: 100%;
+			object-fit: contain;
+		}
+		h2 {
+		@include text(120px, $font-weight-bold, $playfair-display, $color-white);
+			position: absolute;
+			bottom: 0;
+			padding: 20px;
+			line-height: 138px;
+		}
+		&__overlay {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			background-color: $primary-color;
+			z-index: -1;
+		}
 	}
-	h2 {
-	@include text(120px, $font-weight-bold, $playfair-display, $color-white);
-		position: absolute;
-		bottom: 0;
-		padding: 20px;
-		line-height: 138px;
-	}
-}
-.hero-image__overlay {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	background-color: $primary-color;
-	z-index: -1;
-}
-.hero-content {
-	flex: 1.22;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-}
-.hero-content-info {
-	padding: 64px;
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	h1 {
-	@include text(80px, $font-weight-bolder, $playfair-display, $secondary-color);
-	}
-	p {
-	@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
-		margin: 32px 0 0 32px;
-	}
-}
-.hero-content__buttons {
-	margin: 41px 0 0 41px;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 36px;
-}
-.hero-content__order-button {
-@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
-	padding: 20px;
-	border-radius: 36px;
-	min-width: 212px;
-	outline: none;
-	border: none;
-	background: $secondary-color;
-	cursor: pointer;
-	line-height: 23px;
-}
-.hero-content__play-button {
-@include text(16px, unset, $plus-jakarta-sans, $black-200);
-	border: none;
-	outline: none;
-	background: transparent;
-	display: flex;
-	align-items: center;
-	line-height: 19px;
-	cursor: pointer;
-	img {
-		margin-right: 12px;
-		width: 46px;
-		height: 46px;
-		object-fit: contain;
-	}
-}
-.hero-content__testimonial {
-	padding: 32px 64px;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	background: $color-white;
-}
-.hero-content__customer {
-@extend %flex-center;
-	flex: 1;
-	gap: 10px;
-	h4 {
-	@include text(62px, $font-weight-lighter, $playfair-display, $secondary-color)
-	}
-	p {
-	@include text(16px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
-		opacity: $opacity-light;
-	}
-}
-.hero-content__review {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	padding-left: 20px;
-	border-left: 1px solid rgba(2, 2, 2, 0.1);
-	min-width: 200px;
-	img {
-		width: 42px;
-		height: 42px;
-		object-fit: contain;
-	}
-	p {
-	@include text(12px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
-		line-height: 32px;
-		opacity: $opacity-medium;
+	&-content {
+		flex: 1.22;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		&-info {
+			padding: 64px;
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			h1 {
+				@include text(80px, $font-weight-bolder, $playfair-display, $secondary-color);
+			}
+			p {
+				@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
+				margin: 32px 0 0 32px;
+			}
+		}
+		&__buttons {
+			margin: 41px 0 0 41px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 36px;
+		}
+		&__order-button {
+			@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
+			padding: 20px;
+			border-radius: 36px;
+			min-width: 212px;
+			outline: none;
+			border: none;
+			background: $secondary-color;
+			cursor: pointer;
+			line-height: 23px;
+		}
+		&__play-button {
+			@include text(16px, unset, $plus-jakarta-sans, $black-200);
+			border: none;
+			outline: none;
+			background: transparent;
+			display: flex;
+			align-items: center;
+			line-height: 19px;
+			cursor: pointer;
+			img {
+				margin-right: 12px;
+				width: 46px;
+				height: 46px;
+				object-fit: contain;
+			}
+		}
+		&__testimonial {
+			padding: 32px 64px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			background: $color-white;
+		}
+		&__customer {
+			@extend %flex-center;
+			flex: 1;
+			gap: 10px;
+			h4 {
+				@include text(62px, $font-weight-lighter, $playfair-display, $secondary-color)
+			}
+			p {
+				@include text(16px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
+				opacity: $opacity-light;
+			}
+		}
+		&__review {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding-left: 20px;
+			border-left: 1px solid rgba(2, 2, 2, 0.1);
+			min-width: 200px;
+			img {
+				width: 42px;
+				height: 42px;
+				object-fit: contain;
+			}
+			p {
+			@include text(12px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
+				line-height: 32px;
+				opacity: $opacity-medium;
+			}
+		}
+		
 	}
 }
 
@@ -484,201 +485,201 @@ flex: auto;
 	display: flex;
 	min-height: 720px;
 	overflow: hidden;
-}
-.about-us__image {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background: $color-white;
-	position: relative;
-	div {
-	@include customBackground(none, $color-white);
-		padding: 32px 64px;
+	&__image {
 		flex: 1;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background: $color-white;
+		position: relative;
+		div {
+			@include customBackground(none, $color-white);
+			padding: 32px 64px;
+			flex: 1;
+			display: flex;
+			align-items: center;
+		}
+		&-sushi3 {
+			border-bottom: 8px solid $color-creamson;
+			background-image: url("../../assets/about_bg1.png");
+			img {
+				width: 225px;
+				height: 200px;
+			}
+		}
+		&-sushi2 {
+			background-image: url("../../assets/about_bg2.png");
+			img {
+				width: 240px;
+				height: 160px;
+			}
+		}
 	}
-}
-.about-us__image-sushi3 {
-	border-bottom: 8px solid $color-creamson;
-	background-image: url("../../assets/about_bg1.png");
-	img {
-		width: 225px;
-		height: 200px;
+	&__button {
+		@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
+		position: absolute;
+		right: 0;
+		padding: 12px 32px;
+		min-height: 64px;
+		background: $secondary-color;
+		border-radius: 32px 0 0 32px;
+		border: 0;
+		outline: 0;
+		line-height: 23px;
+		cursor: pointer;
+		img {
+			object-fit: contain;
+			margin-left: 32px;
+		}
 	}
-}
-.about-us__image-sushi2 {
-	background-image: url("../../assets/about_bg2.png");
-	img {
-		width: 240px;
-		height: 160px;
+	&__content {
+		padding: 64px;
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
 	}
-}
-.about-us__button {
-	@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
-	position: absolute;
-	right: 0;
-	padding: 12px 32px;
-	min-height: 64px;
-	background: $secondary-color;
-	border-radius: 32px 0 0 32px;
-	border: 0;
-	outline: 0;
-	line-height: 23px;
-	cursor: pointer;
-	img {
-		object-fit: contain;
-		margin-left: 32px;
-	}
-}
-.about-us__content {
-	padding: 64px;
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
 }
 
 // Popular-----------------------------------------------------------------------------------------
 .popular-foods {
-@include customBackground(url("../../assets/popular_bg.png"));
+	@include customBackground(url("../../assets/popular_bg.png"));
 	padding: 64px;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-}
-.popular-foods__title {
-@include text(56px, $font-weight-bolder, $playfair-display, $color-white);
-	line-height: 78px;
-	text-align: center;
-}
-.popular-foods__filters {
-	margin-top: 48px;
-	max-width: 100%;
-	overflow-x: auto;
-	display: flex;
-	justify-content: center;
-	gap: 24px;
-}
-.popular-foods__filter-btn {
-@include text(14px, $font-weight-light, $plus-jakarta-sans, $color-white);
-	padding: 3px 14px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 10px;
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	border-radius: 46px;
-	line-height: 25px;
-	cursor: pointer;
-	&:hover {
-		background: #fff;
-		color: $primary-color;
+	&__title {
+		@include text(56px, $font-weight-bolder, $playfair-display, $color-white);
+		line-height: 78px;
+		text-align: center;
 	}
-}
-@each $button, $background in $popular-foods-btn-bg {
-	.popular-foods__filter-btn-#{$button}-icon {
-		width: 36px;
-		height: 36px;
-		background: url("#{$background}") no-repeat;
-		background-size: contain;
-		background-position: center;
+	&__filter {
+		margin-top: 48px;
+		max-width: 100%;
+		overflow-x: auto;
 		display: flex;
+		justify-content: center;
+		gap: 24px;
+		&-btn {
+			@include text(14px, $font-weight-light, $plus-jakarta-sans, $color-white);
+			padding: 3px 14px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 10px;
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: 46px;
+			line-height: 25px;
+			cursor: pointer;
+			&:hover {
+				background: #fff;
+				color: $primary-color;
+			}
+		}
+		@each $button, $background in $popular-foods-btn-bg {
+			.popular-foods__filter-btn-#{$button}-icon {
+				width: 36px;
+				height: 36px;
+				background: url("#{$background}") no-repeat;
+				background-size: contain;
+				background-position: center;
+				display: flex;
+			}
+		}
 	}
-}
-.popular-foods__catalogue {
-@include displayFlex (center, flex-end);
-	margin-top: 64px;
-	flex-wrap: wrap;
-	gap: 56px;
-}
-.popular-foods__button {
-@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
-	width: fit-content;
-	padding: 20px 30px;
-	margin: 80px auto 0;
-	line-height: 23px;
-	border: none;
-	outline: none;
-	background: $secondary-color;
-	border-radius: 64px;
-	cursor: pointer;
-	img {
-		width: 14px;
-		height: 14px;
-		object-fit: contain;
-		margin-left: 21px;
+	&__catalogue {
+		@include displayFlex (center, flex-end);
+		margin-top: 64px;
+		flex-wrap: wrap;
+		gap: 56px;
 	}
-}
-.popular-foods__card {
-	padding: 38px;
-	min-width: 260px;
-	height: fit-content;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	border-radius: 36px;
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.popular-foods__card-image {
-	width: 110px;
-	height: 84px;
-	object-fit: contain;
-}
-.popular-foods__card-title {
-@include text(24px, $font-weight-bolder, $playfair-display, $color-white);
-	margin-top: 47px;
-	line-height: 32px;
-	text-align: center;
-}
-.popular-foods__card-details {
-@extend %flex-between;
-	width: 100%;
-	margin-top: 32px;
-}
-.popular-foods__card-rating {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	img {
-		width: 24px;
-		height: 24px;
-		object-fit: contain;
-	}
-	p {
-	@include text(20px, $font-weight-light, $plus-jakarta-sans, $color-white);
-	}
-}
-.popular-foods__card-price {
-@include text(20px, $font-weight-base, $plus-jakarta-sans, $color-white);
-}
-.popular-foods__card.active-card {
-	background: $color-white;
-	min-width: 340px;
-	.popular-foods__card-image {
-		width: 214px;
-		height: 160px;
-	}
-	.popular-foods__card-title {
-		color: $black-500;
-		font-size: 32px;
-	}
-	.popular-foods__card-rating {
+	&__button {
+		@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
+		width: fit-content;
+		padding: 20px 30px;
+		margin: 80px auto 0;
+		line-height: 23px;
+		border: none;
+		outline: none;
+		background: $secondary-color;
+		border-radius: 64px;
+		cursor: pointer;
 		img {
-			width: 32px;
-			height: 32px;
-		}
-		p {
-			font-size: 24px;
-			color: $gray-100;
+			width: 14px;
+			height: 14px;
+			object-fit: contain;
+			margin-left: 21px;
 		}
 	}
-	.popular-foods__card-price {
-		font-size: 24px;
-		color: $secondary-color;
+	&__card {
+		padding: 38px;
+		min-width: 260px;
+		height: fit-content;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		border-radius: 36px;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		&-image {
+			width: 110px;
+			height: 84px;
+			object-fit: contain;
+		}
+		&-title {
+			@include text(24px, $font-weight-bolder, $playfair-display, $color-white);
+			margin-top: 47px;
+			line-height: 32px;
+			text-align: center;
+		}
+		&-details {
+			@extend %flex-between;
+			width: 100%;
+			margin-top: 32px;
+		}
+		&-rating {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			img {
+				width: 24px;
+				height: 24px;
+				object-fit: contain;
+			}
+			p {
+				@include text(20px, $font-weight-light, $plus-jakarta-sans, $color-white);
+			}
+		}
+		&-price {
+			@include text(20px, $font-weight-base, $plus-jakarta-sans, $color-white);
+		}
+		&.active-card {
+			background: $color-white;
+			min-width: 340px;
+			.popular-foods__card-image {
+				width: 214px;
+				height: 160px;
+			}
+			.popular-foods__card-title {
+				color: $black-500;
+				font-size: 32px;
+			}
+			.popular-foods__card-rating {
+				img {
+					width: 32px;
+					height: 32px;
+				}
+				p {
+					font-size: 24px;
+					color: $gray-100;
+				}
+			}
+			.popular-foods__card-price {
+				font-size: 24px;
+				color: $secondary-color;
+			}
+		}
 	}
 }
 
@@ -688,185 +689,185 @@ flex: auto;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-}
-.trending__discover {
-@include displayFlex (center, center);
-	position: absolute;
-	top: 44%;
-	left: 44%;
-	z-index: 1;
-	width: 160px;
-	height: 160px;
-	border-radius: 100%;
-	background-color: $secondary-color;
-	cursor: pointer;
-	p {
-	@include text(18px, $font-weight-base, $plus-jakarta-sans,  $color-white);
-		text-transform: uppercase;
+	&__discover {
+		@include displayFlex (center, center);
+		position: absolute;
+		top: 44%;
+		left: 44%;
+		z-index: 1;
+		width: 160px;
+		height: 160px;
+		border-radius: 100%;
+		background-color: $secondary-color;
+		cursor: pointer;
+		p {
+		@include text(18px, $font-weight-base, $plus-jakarta-sans,  $color-white);
+			text-transform: uppercase;
+		}
 	}
-}
-.trending-sushi {
-	width: 100%;
-	min-height: 640px;
-	display: flex;
-	flex-direction: row;
-	.trending__image {
-		background-image: url("../../assets/japanese_sushi.png");
+	&-sushi {
+		width: 100%;
+		min-height: 640px;
+		display: flex;
+		flex-direction: row;
+		.trending__image {
+			background-image: url("../../assets/japanese_sushi.png");
+		}
 	}
-}
-.trending-drinks {
-	width: 100%;
-	min-height: 640px;
-	display: flex;
-	flex-direction: row;
-}
-.trending__content {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	padding: 32px 64px;
-}
-.trending__list {
-	list-style: none;
-	flex-wrap: wrap;
-	gap: 20px;
-	li {
+	&-drinks {
+		width: 100%;
+		min-height: 640px;
+		display: flex;
+		flex-direction: row;
+	}
+	&__content {
 		flex: 1;
 		display: flex;
-		align-items: center;
-		flex-direction: row;
-		gap: 12px;
-		min-width: 210px;
+		justify-content: center;
+		flex-direction: column;
+		padding: 32px 64px;
 	}
-	p {
-	@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
+	&__list {
+		list-style: none;
+		flex-wrap: wrap;
+		gap: 20px;
+		li {
+			flex: 1;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			gap: 12px;
+			min-width: 210px;
+		}
+		p {
+		@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
+			flex: 1;
+		}
+	}
+	&__icon {
+	@extend %flex-center;
+		width: 24px;
+		height: 24px;
+		border-radius: 100%;
+		background-color: $primary-color;
+		img {
+			width: 50%;
+			height: 50%;
+			object-fit: contain;
+		}
+	}
+	&__image {
+	@extend %flex-center;
+	@include customBackground(none, $color-white);
 		flex: 1;
+		position: relative;
+		padding: 32px 64px;
+		img {
+			width: 254px;
+			height: 260px;
+			object-fit: contain;
+		}
 	}
-}
-.trending__icon {
-@extend %flex-center;
-	width: 24px;
-	height: 24px;
-	border-radius: 100%;
-	background-color: $primary-color;
-	img {
-		width: 50%;
-		height: 50%;
-		object-fit: contain;
+	&-drink {
+		.trending__image {
+			background-image: url("../../assets/japanese_drinks.png");
+		}
 	}
-}
-.trending__image {
-@extend %flex-center;
-@include customBackground(none, $color-white);
-	flex: 1;
-	position: relative;
-	padding: 32px 64px;
-	img {
-		width: 254px;
-		height: 260px;
-		object-fit: contain;
+	&__arrow {
+		position: absolute;
+		z-index: 1;
+		img {
+			object-fit: contain;
+		}
+		&-left {
+			left: -2.5px;
+			top: 12%;
+			img {
+				width: auto;
+				height: 100%;
+			}
+		}
+		&-top {
+			img {
+				width: auto;
+				height: 100%;
+			}
+			top: -10.5px;
+			left: 12%;
+		}
+		&-bottom {
+			bottom: -6.5px;
+			right: 12%;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		&-right {
+			img {
+				width: 100%;
+				height: auto;
+			}
+			right: -2.5px;
+			bottom: 12%;
+		}
 	}
-}
-.trending-drink {
-	.trending__image {
-		background-image: url("../../assets/japanese_drinks.png");
-	}
-}
-.trending__arrow {
-	position: absolute;
-	z-index: 1;
-	img {
-		object-fit: contain;
-	}
-}
-.trending__arrow-left {
-	left: -2.5px;
-	top: 12%;
-	img {
-		width: auto;
-		height: 100%;
-	}
-}
-.trending__arrow-top {
-	img {
-		width: auto;
-		height: 100%;
-	}
-	top: -10.5px;
-	left: 12%;
-}
-.trending__arrow-bottom {
-	bottom: -6.5px;
-	right: 12%;
-	img {
-		width: 100%;
-		height: auto;
-	}
-}
-.trending__arrow-right {
-	img {
-		width: 100%;
-		height: auto;
-	}
-	right: -2.5px;
-	bottom: 12%;
 }
 
 // Subscription----------------------------------------------------------------------------------------------
 .subscription {
-@extend %flex-center;
-@include customBackground(url('../../assets/subscribe_bg.png'));
+	@extend %flex-center;
+	@include customBackground(url('../../assets/subscribe_bg.png'));
 	padding: 64px;
 	flex-direction: column;
 	overflow: hidden;
 	h2 {
-	@include text(88px, $font-weight-bolder, $playfair-display, $color-white);
+		@include text(88px, $font-weight-bolder, $playfair-display, $color-white);
 		line-height: 123px;
 		text-align: center;
 	}
 	p {
-	@include text(18px, $font-weight-light, $plus-jakarta-sans, rgba(255, 255, 255, 0.8));
+		@include text(18px, $font-weight-light, $plus-jakarta-sans, rgba(255, 255, 255, 0.8));
 		line-height: 36px;
 		margin-top: 32px;
 	}
-}
-.subscription__form {
-	min-width: 480px;
-	margin-top: 40px;
-	padding: 14px 14px 14px 24px;
-	display: flex;
-	gap: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.5);
-	border-radius: 46px;
-	input {
-	@include text(16px, $font-weight-lighter, $plus-jakarta-sans, $color-white);
-		flex: 1;
-		opacity: $opacity-light;
-		background: transparent;
-		border: none;
-		outline: none;
-		&::placeholder {
-			color: $color-white;
-			opacity: $opacity-light;
-		}
-	}
-	button {
-	@include text(16px, $font-weight-base, $plus-jakarta-sans, $color-white);
-		padding: 20px;
-		min-width: 180px;
-		text-align: center;
-		background: $black-400;
+	&__form {
+		min-width: 480px;
+		margin-top: 40px;
+		padding: 14px 14px 14px 24px;
+		display: flex;
+		gap: 10px;
+		border: 1px solid rgba(255, 255, 255, 0.5);
 		border-radius: 46px;
-		border: none;
-		outline: none;
-		cursor: pointer;
+		input {
+			@include text(16px, $font-weight-lighter, $plus-jakarta-sans, $color-white);
+			flex: 1;
+			opacity: $opacity-light;
+			background: transparent;
+			border: none;
+			outline: none;
+			&::placeholder {
+				color: $color-white;
+				opacity: $opacity-light;
+			}
+		}
+		button {
+			@include text(16px, $font-weight-base, $plus-jakarta-sans, $color-white);
+			padding: 20px;
+			min-width: 180px;
+			text-align: center;
+			background: $black-400;
+			border-radius: 46px;
+			border: none;
+			outline: none;
+			cursor: pointer;
+		}
 	}
 }
 
 // Footer-------------------------------------------------------------------------------------------------------------
 .footer {
-@extend %flex-between;
+	@extend %flex-between;
 	width: 100%;
 	padding: 20px 40px;
 	background: $color-white;
@@ -883,33 +884,33 @@ flex: auto;
 			gap: 32px;
 		}
 	}
-}
-.footer__logo {
-@include text(24px, $font-weight-bold, $playfair-display, $secondary-color);
-	text-transform: uppercase;
-	cursor: pointer;
-	span {
-		color: $primary-color;
-	}
-}
-.footer__nav {
-	li {
-	@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
+	&__logo {
+		@include text(24px, $font-weight-bold, $playfair-display, $secondary-color);
 		text-transform: uppercase;
 		cursor: pointer;
+		span {
+			color: $primary-color;
+		}
 	}
-}
-.footer__social {
-	li {
-	@extend %flex-center; 
-		width: 42px;
-		height: 42px;
-		background-color: $secondary-color;
-		border-radius: 100%;
-		img {
-			width: 45%;
-			height: 45%;
-			object-fit: contain;
+	&__nav {
+		li {
+			@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
+			text-transform: uppercase;
+			cursor: pointer;
+		}
+	}
+	&__social {
+		li {
+			@extend %flex-center; 
+			width: 42px;
+			height: 42px;
+			background-color: $secondary-color;
+			border-radius: 100%;
+			img {
+				width: 45%;
+				height: 45%;
+				object-fit: contain;
+			}
 		}
 	}
 }

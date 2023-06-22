@@ -260,7 +260,6 @@ body a {
   text-transform: uppercase;
   opacity: 0.8;
 }
-
 .header__logo-overlay {
   position: absolute;
   inset: 0;
@@ -311,7 +310,6 @@ body a {
   min-height: calc(100vh - 74px);
   overflow: hidden;
 }
-
 .hero-image {
   flex: 1;
   display: flex;
@@ -334,7 +332,6 @@ body a {
   padding: 20px;
   line-height: 138px;
 }
-
 .hero-image__overlay {
   position: absolute;
   inset: 0;
@@ -342,14 +339,12 @@ body a {
   background-color: #b1454a;
   z-index: -1;
 }
-
 .hero-content {
   flex: 1.22;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
-
 .hero-content-info {
   padding: 64px;
   flex: 1;
@@ -370,14 +365,12 @@ body a {
   color: #121212;
   margin: 32px 0 0 32px;
 }
-
 .hero-content__buttons {
   margin: 41px 0 0 41px;
   display: flex;
   flex-wrap: wrap;
   gap: 36px;
 }
-
 .hero-content__order-button {
   font-size: 18px;
   font-weight: 500;
@@ -392,7 +385,6 @@ body a {
   cursor: pointer;
   line-height: 23px;
 }
-
 .hero-content__play-button {
   font-size: 16px;
   font-weight: unset;
@@ -412,7 +404,6 @@ body a {
   height: 46px;
   object-fit: contain;
 }
-
 .hero-content__testimonial {
   padding: 32px 64px;
   display: flex;
@@ -420,7 +411,6 @@ body a {
   gap: 20px;
   background: #fff;
 }
-
 .hero-content__customer {
   flex: 1;
   gap: 10px;
@@ -438,7 +428,6 @@ body a {
   color: #121212;
   opacity: 0.5;
 }
-
 .hero-content__review {
   flex: 1;
   display: flex;
@@ -467,7 +456,6 @@ body a {
   min-height: 720px;
   overflow: hidden;
 }
-
 .about-us__image {
   flex: 1;
   display: flex;
@@ -487,7 +475,6 @@ body a {
   display: flex;
   align-items: center;
 }
-
 .about-us__image-sushi3 {
   border-bottom: 8px solid #fff0de;
   background-image: url("../../assets/about_bg1.png");
@@ -496,7 +483,6 @@ body a {
   width: 225px;
   height: 200px;
 }
-
 .about-us__image-sushi2 {
   background-image: url("../../assets/about_bg2.png");
 }
@@ -504,7 +490,6 @@ body a {
   width: 240px;
   height: 160px;
 }
-
 .about-us__button {
   font-size: 18px;
   font-weight: 500;
@@ -525,7 +510,6 @@ body a {
   object-fit: contain;
   margin-left: 32px;
 }
-
 .about-us__content {
   padding: 64px;
   flex: 1;
@@ -545,7 +529,6 @@ body a {
   flex-direction: column;
   overflow: hidden;
 }
-
 .popular-foods__title {
   font-size: 56px;
   font-weight: 600;
@@ -554,8 +537,7 @@ body a {
   line-height: 78px;
   text-align: center;
 }
-
-.popular-foods__filters {
+.popular-foods__filter {
   margin-top: 48px;
   max-width: 100%;
   overflow-x: auto;
@@ -563,7 +545,6 @@ body a {
   justify-content: center;
   gap: 24px;
 }
-
 .popular-foods__filter-btn {
   font-size: 14px;
   font-weight: 300;
@@ -584,8 +565,7 @@ body a {
   background: #fff;
   color: #b1454a;
 }
-
-.popular-foods__filter-btn-sushi-icon {
+.popular-foods__filter .popular-foods__filter-btn-sushi-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-9.png") no-repeat;
@@ -593,8 +573,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-ramen-icon {
+.popular-foods__filter .popular-foods__filter-btn-ramen-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-8.png") no-repeat;
@@ -602,8 +581,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-udon-icon {
+.popular-foods__filter .popular-foods__filter-btn-udon-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-7.png") no-repeat;
@@ -611,8 +589,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-danggo-icon {
+.popular-foods__filter .popular-foods__filter-btn-danggo-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-6.png") no-repeat;
@@ -620,8 +597,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-maki-icon {
+.popular-foods__filter .popular-foods__filter-btn-maki-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-5.png") no-repeat;
@@ -629,8 +605,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-drinks-icon {
+.popular-foods__filter .popular-foods__filter-btn-drinks-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-4.png") no-repeat;
@@ -638,8 +613,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-sashimi-icon {
+.popular-foods__filter .popular-foods__filter-btn-sashimi-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-3.png") no-repeat;
@@ -647,8 +621,7 @@ body a {
   background-position: center;
   display: flex;
 }
-
-.popular-foods__filter-btn-nigiri-icon {
+.popular-foods__filter .popular-foods__filter-btn-nigiri-icon {
   width: 36px;
   height: 36px;
   background: url("../assets/sushi-2.png") no-repeat;
@@ -656,7 +629,6 @@ body a {
   background-position: center;
   display: flex;
 }
-
 .popular-foods__catalogue {
   display: flex;
   justify-content: center;
@@ -665,7 +637,6 @@ body a {
   flex-wrap: wrap;
   gap: 56px;
 }
-
 .popular-foods__button {
   font-size: 18px;
   font-weight: 500;
@@ -687,7 +658,6 @@ body a {
   object-fit: contain;
   margin-left: 21px;
 }
-
 .popular-foods__card {
   padding: 38px;
   min-width: 260px;
@@ -699,13 +669,11 @@ body a {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .popular-foods__card-image {
   width: 110px;
   height: 84px;
   object-fit: contain;
 }
-
 .popular-foods__card-title {
   font-size: 24px;
   font-weight: 600;
@@ -715,12 +683,10 @@ body a {
   line-height: 32px;
   text-align: center;
 }
-
 .popular-foods__card-details {
   width: 100%;
   margin-top: 32px;
 }
-
 .popular-foods__card-rating {
   display: flex;
   align-items: center;
@@ -737,14 +703,12 @@ body a {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #fff;
 }
-
 .popular-foods__card-price {
   font-size: 20px;
   font-weight: 500;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #fff;
 }
-
 .popular-foods__card.active-card {
   background: #fff;
   min-width: 340px;
@@ -776,7 +740,6 @@ body a {
   flex-direction: column;
   overflow: hidden;
 }
-
 .trending__discover {
   display: flex;
   justify-content: center;
@@ -798,7 +761,6 @@ body a {
   color: #fff;
   text-transform: uppercase;
 }
-
 .trending-sushi {
   width: 100%;
   min-height: 640px;
@@ -808,14 +770,12 @@ body a {
 .trending-sushi .trending__image {
   background-image: url("../../assets/japanese_sushi.png");
 }
-
 .trending-drinks {
   width: 100%;
   min-height: 640px;
   display: flex;
   flex-direction: row;
 }
-
 .trending__content {
   flex: 1;
   display: flex;
@@ -823,7 +783,6 @@ body a {
   flex-direction: column;
   padding: 32px 64px;
 }
-
 .trending__list {
   list-style: none;
   flex-wrap: wrap;
@@ -844,7 +803,6 @@ body a {
   color: #121212;
   flex: 1;
 }
-
 .trending__icon {
   width: 24px;
   height: 24px;
@@ -856,7 +814,6 @@ body a {
   height: 50%;
   object-fit: contain;
 }
-
 .trending__image {
   background-image: none;
   background-color: #fff;
@@ -872,11 +829,9 @@ body a {
   height: 260px;
   object-fit: contain;
 }
-
 .trending-drink .trending__image {
   background-image: url("../../assets/japanese_drinks.png");
 }
-
 .trending__arrow {
   position: absolute;
   z-index: 1;
@@ -884,7 +839,6 @@ body a {
 .trending__arrow img {
   object-fit: contain;
 }
-
 .trending__arrow-left {
   left: -2.5px;
   top: 12%;
@@ -893,7 +847,6 @@ body a {
   width: auto;
   height: 100%;
 }
-
 .trending__arrow-top {
   top: -10.5px;
   left: 12%;
@@ -902,7 +855,6 @@ body a {
   width: auto;
   height: 100%;
 }
-
 .trending__arrow-bottom {
   bottom: -6.5px;
   right: 12%;
@@ -911,7 +863,6 @@ body a {
   width: 100%;
   height: auto;
 }
-
 .trending__arrow-right {
   right: -2.5px;
   bottom: 12%;
@@ -947,7 +898,6 @@ body a {
   line-height: 36px;
   margin-top: 32px;
 }
-
 .subscription__form {
   min-width: 480px;
   margin-top: 40px;
@@ -1005,7 +955,6 @@ body a {
 .footer ul:last-child {
   gap: 32px;
 }
-
 .footer__logo {
   font-size: 24px;
   font-weight: 700;
@@ -1017,7 +966,6 @@ body a {
 .footer__logo span {
   color: #b1454a;
 }
-
 .footer__nav li {
   font-size: 16px;
   font-weight: 500;
@@ -1026,7 +974,6 @@ body a {
   text-transform: uppercase;
   cursor: pointer;
 }
-
 .footer__social li {
   width: 42px;
   height: 42px;
