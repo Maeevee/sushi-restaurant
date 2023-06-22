@@ -13,6 +13,12 @@ $gray-100: #888888;
 $color-white: #fff;
 $color-creamson: #fff0de;
 
+// Gap
+$gap-base: 8px;
+$gap-sm: $gap-base * 1.25;
+$gap-md: $gap-base * 2.5;
+$gap-lg: $gap-base * 8;
+
 // Font weights
 $font-weight-base: 500;
 $font-weight-bolder: $font-weight-base + 100; // 600

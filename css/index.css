@@ -1,15 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
-.footer__social li, .subscription, .trending__image, .trending__icon, .hero-content__customer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.f-direction-r {
+  flex-direction: row;
 }
 
-.footer, .popular-foods__card-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.f-direction-c {
+  flex-direction: column;
+}
+
+.position-r {
+  position: relative;
+}
+
+.position-a {
+  position: absolute;
+}
+
+.gap-bs {
+  gap: 8px;
+}
+
+.gap-sm {
+  gap: 10px;
+}
+
+.gap-md {
+  gap: 20px;
+}
+
+.gap-lg {
+  gap: 64px;
 }
 
 * {
@@ -27,6 +47,18 @@ body {
 body a {
   text-decoration: none;
   color: inherit;
+}
+
+.footer__social li, .subscription, .trending__image, .trending__icon, .hero-content__customer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer, .popular-foods__card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sushi__subtitle {
@@ -248,7 +280,6 @@ body a {
 .header__logo {
   flex: 1;
   display: flex;
-  position: relative;
   padding: 20px;
 }
 .header__logo h4 {
@@ -261,7 +292,6 @@ body a {
   opacity: 0.8;
 }
 .header__logo-overlay {
-  position: absolute;
   inset: 0;
   width: 100%;
   background-color: #b1454a;
@@ -274,7 +304,6 @@ body a {
   align-items: center;
   padding: 20px;
   flex: 1.236;
-  gap: 64px;
   list-style: none;
 }
 .header__menu li {
@@ -302,7 +331,6 @@ body a {
   list-style: none;
   display: none;
   gap: 20px;
-  position: relative;
 }
 
 .hero {
@@ -313,8 +341,6 @@ body a {
 .hero-image {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  position: relative;
   z-index: 5;
 }
 .hero-image img {
@@ -327,13 +353,11 @@ body a {
   font-weight: 700;
   font-family: "Playfair Display", serif;
   color: #fff;
-  position: absolute;
   bottom: 0;
   padding: 20px;
   line-height: 138px;
 }
 .hero-image__overlay {
-  position: absolute;
   inset: 0;
   width: 100%;
   background-color: #b1454a;
@@ -343,14 +367,12 @@ body a {
   flex: 1.22;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
 }
 .hero-content-info {
   padding: 64px;
   flex: 1;
   display: flex;
   justify-content: center;
-  flex-direction: column;
 }
 .hero-content-info h1 {
   font-size: 80px;
@@ -413,7 +435,6 @@ body a {
 }
 .hero-content__customer {
   flex: 1;
-  gap: 10px;
 }
 .hero-content__customer h4 {
   font-size: 62px;
@@ -432,7 +453,6 @@ body a {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 10px;
   padding-left: 20px;
   border-left: 1px solid rgba(2, 2, 2, 0.1);
   min-width: 200px;
@@ -459,10 +479,8 @@ body a {
 .about-us__image {
   flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background: #fff;
-  position: relative;
 }
 .about-us__image div {
   background-image: none;
@@ -495,7 +513,6 @@ body a {
   font-weight: 500;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #fff;
-  position: absolute;
   right: 0;
   padding: 12px 32px;
   min-height: 64px;
@@ -515,7 +532,6 @@ body a {
   flex: 1;
   display: flex;
   justify-content: center;
-  flex-direction: column;
 }
 
 .popular-foods {
@@ -526,7 +542,6 @@ body a {
   background-size: contain;
   padding: 64px;
   display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 .popular-foods__title {
@@ -552,9 +567,7 @@ body a {
   color: #fff;
   padding: 3px 14px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 46px;
@@ -664,7 +677,6 @@ body a {
   height: fit-content;
   display: flex;
   align-items: center;
-  flex-direction: column;
   border-radius: 36px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -690,7 +702,6 @@ body a {
 .popular-foods__card-rating {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 .popular-foods__card-rating img {
   width: 24px;
@@ -735,16 +746,13 @@ body a {
 }
 
 .trending {
-  position: relative;
   display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 .trending__discover {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   top: 44%;
   left: 44%;
   z-index: 1;
@@ -765,7 +773,6 @@ body a {
   width: 100%;
   min-height: 640px;
   display: flex;
-  flex-direction: row;
 }
 .trending-sushi .trending__image {
   background-image: url("../../assets/japanese_sushi.png");
@@ -774,13 +781,11 @@ body a {
   width: 100%;
   min-height: 640px;
   display: flex;
-  flex-direction: row;
 }
 .trending__content {
   flex: 1;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   padding: 32px 64px;
 }
 .trending__list {
@@ -792,7 +797,6 @@ body a {
   flex: 1;
   display: flex;
   align-items: center;
-  flex-direction: row;
   gap: 12px;
   min-width: 210px;
 }
@@ -821,7 +825,6 @@ body a {
   background-repeat: no-repeat;
   background-size: contain;
   flex: 1;
-  position: relative;
   padding: 32px 64px;
 }
 .trending__image img {
@@ -833,43 +836,28 @@ body a {
   background-image: url("../../assets/japanese_drinks.png");
 }
 .trending__arrow {
-  position: absolute;
   z-index: 1;
 }
 .trending__arrow img {
   object-fit: contain;
+  width: auto;
+  height: 100%;
 }
 .trending__arrow-left {
   left: -2.5px;
   top: 12%;
 }
-.trending__arrow-left img {
-  width: auto;
-  height: 100%;
-}
 .trending__arrow-top {
-  top: -10.5px;
-  left: 12%;
-}
-.trending__arrow-top img {
-  width: auto;
-  height: 100%;
+  top: 629px;
+  left: 7%;
 }
 .trending__arrow-bottom {
   bottom: -6.5px;
   right: 12%;
 }
-.trending__arrow-bottom img {
-  width: 100%;
-  height: auto;
-}
 .trending__arrow-right {
-  right: -2.5px;
-  bottom: 12%;
-}
-.trending__arrow-right img {
-  width: 100%;
-  height: auto;
+  right: 636.5px;
+  bottom: 5%;
 }
 
 .subscription {
@@ -879,7 +867,6 @@ body a {
   background-repeat: no-repeat;
   background-size: contain;
   padding: 64px;
-  flex-direction: column;
   overflow: hidden;
 }
 .subscription h2 {
@@ -903,7 +890,6 @@ body a {
   margin-top: 40px;
   padding: 14px 14px 14px 24px;
   display: flex;
-  gap: 10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 46px;
 }
@@ -942,15 +928,12 @@ body a {
   padding: 20px 40px;
   background: #fff;
   flex-wrap: wrap;
-  gap: 20px;
   overflow: hidden;
 }
 .footer ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  gap: 64px;
 }
 .footer ul:last-child {
   gap: 32px;

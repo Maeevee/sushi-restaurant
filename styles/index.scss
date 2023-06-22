@@ -5,90 +5,86 @@
 
 
 @import 'variables';
-
-@mixin customBackground($image, $color:$primary-color){
-background: {
-	image: $image;
-	color: $color;
-	position: center;
-	repeat: no-repeat;
-	size: contain;
-}
-
-}
-
-@mixin text($font-size, $font-weight, $font-family, $color){
-font: {
-	size: $font-size;
-	weight: $font-weight;
-	family: $font-family;
-}
-color: $color;
-
-}
-
-@mixin displayFlex ($justify-content, $align-items){
-display: flex;
-justify-content: $justify-content;
-align-items: $align-items;
-}
-
-%flex-center {
-@include displayFlex (center, center);
-}
-
-%flex-between {
-@include displayFlex (space-between, center);
-}
-
-
-
+@import 'utilities';
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-max-width: 1280px;
-margin: 0 auto;
-background-color: $color-creamson;
-a {
-	text-decoration: none;
-	color: inherit;
+	max-width: 1280px;
+	margin: 0 auto;
+	background-color: $color-creamson;
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
 }
+
+@mixin customBackground($image, $color:$primary-color){
+	background: {
+		image: $image;
+		color: $color;
+		position: center;
+		repeat: no-repeat;
+		size: contain;
+	}
+}
+
+@mixin text($font-size, $font-weight, $font-family, $color){
+	font: {
+		size: $font-size;
+		weight: $font-weight;
+		family: $font-family;
+	}
+	color: $color;
+}
+
+@mixin displayFlex ($justify-content, $align-items){
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+%flex-center {
+	@include displayFlex (center, center);
+}
+
+%flex-between {
+	@include displayFlex (space-between, center);
 }
 
 .sushi__subtitle {
-@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $primary-color);
-opacity: $opacity-medium;
-letter-spacing: -0.01em;
+	@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $primary-color);
+	opacity: $opacity-medium;
+	letter-spacing: -0.01em;
 }
 
 .sushi__title {
-@include text(65px, $font-weight-bolder, $playfair-display, $secondary-color);
-margin-top: 16px;
+	@include text(65px, $font-weight-bolder, $playfair-display, $secondary-color);
+	margin-top: 16px;
 }
 
 .sushi__description {
-@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
-line-height: 36px;
-letter-spacing: -0.01em;
-opacity: $opacity-medium;
-margin: 32px 0px;
+	@include text(18px, $font-weight-lighter, $plus-jakarta-sans, $secondary-color);
+	line-height: 36px;
+	letter-spacing: -0.01em;
+	opacity: $opacity-medium;
+	margin: 32px 0px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .sushi__hide-scrollbar::-webkit-scrollbar {
-display: none;
+	display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .sushi__hide-scrollbar {
--ms-overflow-style: none; /* IE and Edge */
-scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }
 
 /* START: about us media queries */
@@ -310,7 +306,6 @@ flex: auto;
 .header__logo {
 	flex: 1;
 	display: flex;
-	position: relative;
 	padding: 20px;
 	h4 {
 		@include text(24px, $font-weight-bold, $playfair-display, $color-white);
@@ -319,7 +314,6 @@ flex: auto;
 		opacity: $opacity-medium;
 	}
 	&-overlay {
-		position: absolute;
 		inset: 0;
 		width: 100%;
 		background-color: $primary-color;
@@ -330,7 +324,6 @@ flex: auto;
 	@include displayFlex (flex-end, center);
 	padding: 20px;
 	flex: 1.236;
-	gap: 64px;
 	list-style: none;
 	li {
 		@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
@@ -352,7 +345,6 @@ flex: auto;
 	list-style: none;
 	display: none;
 	gap: 20px;
-	position: relative;
 }
 
 // Hero------------------------------------------------------------------------------------------------
@@ -362,9 +354,7 @@ flex: auto;
 	overflow: hidden;
 	&-image {
 		flex: 1;
-		display: flex;
-		flex-direction: column;
-		position: relative;
+		display: flex;		
 		z-index: 5;
 		img {
 			width: 120%;
@@ -373,13 +363,11 @@ flex: auto;
 		}
 		h2 {
 		@include text(120px, $font-weight-bold, $playfair-display, $color-white);
-			position: absolute;
 			bottom: 0;
 			padding: 20px;
 			line-height: 138px;
 		}
 		&__overlay {
-			position: absolute;
 			inset: 0;
 			width: 100%;
 			background-color: $primary-color;
@@ -390,13 +378,11 @@ flex: auto;
 		flex: 1.22;
 		display: flex;
 		justify-content: space-between;
-		flex-direction: column;
 		&-info {
 			padding: 64px;
 			flex: 1;
 			display: flex;
 			justify-content: center;
-			flex-direction: column;
 			h1 {
 				@include text(80px, $font-weight-bolder, $playfair-display, $secondary-color);
 			}
@@ -448,7 +434,6 @@ flex: auto;
 		&__customer {
 			@extend %flex-center;
 			flex: 1;
-			gap: 10px;
 			h4 {
 				@include text(62px, $font-weight-lighter, $playfair-display, $secondary-color)
 			}
@@ -461,7 +446,6 @@ flex: auto;
 			flex: 1;
 			display: flex;
 			align-items: center;
-			gap: 10px;
 			padding-left: 20px;
 			border-left: 1px solid rgba(2, 2, 2, 0.1);
 			min-width: 200px;
@@ -488,10 +472,8 @@ flex: auto;
 	&__image {
 		flex: 1;
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		background: $color-white;
-		position: relative;
 		div {
 			@include customBackground(none, $color-white);
 			padding: 32px 64px;
@@ -517,7 +499,6 @@ flex: auto;
 	}
 	&__button {
 		@include text(18px, $font-weight-base, $plus-jakarta-sans, $color-white);
-		position: absolute;
 		right: 0;
 		padding: 12px 32px;
 		min-height: 64px;
@@ -537,7 +518,6 @@ flex: auto;
 		flex: 1;
 		display: flex;
 		justify-content: center;
-		flex-direction: column;
 	}
 }
 
@@ -546,7 +526,6 @@ flex: auto;
 	@include customBackground(url("../../assets/popular_bg.png"));
 	padding: 64px;
 	display: flex;
-	flex-direction: column;
 	overflow: hidden;
 	&__title {
 		@include text(56px, $font-weight-bolder, $playfair-display, $color-white);
@@ -564,9 +543,7 @@ flex: auto;
 			@include text(14px, $font-weight-light, $plus-jakarta-sans, $color-white);
 			padding: 3px 14px;
 			display: flex;
-			flex-direction: row;
 			align-items: center;
-			gap: 10px;
 			background: rgba(255, 255, 255, 0.05);
 			border: 1px solid rgba(255, 255, 255, 0.2);
 			border-radius: 46px;
@@ -618,7 +595,6 @@ flex: auto;
 		height: fit-content;
 		display: flex;
 		align-items: center;
-		flex-direction: column;
 		border-radius: 36px;
 		background: rgba(255, 255, 255, 0.05);
 		border: 1px solid rgba(255, 255, 255, 0.2);
@@ -641,7 +617,6 @@ flex: auto;
 		&-rating {
 			display: flex;
 			align-items: center;
-			gap: 8px;
 			img {
 				width: 24px;
 				height: 24px;
@@ -685,13 +660,10 @@ flex: auto;
 
 // Trending-------------------------------------------------------------------------------------------------
 .trending {
-	position: relative;
 	display: flex;
-	flex-direction: column;
 	overflow: hidden;
 	&__discover {
 		@include displayFlex (center, center);
-		position: absolute;
 		top: 44%;
 		left: 44%;
 		z-index: 1;
@@ -709,7 +681,6 @@ flex: auto;
 		width: 100%;
 		min-height: 640px;
 		display: flex;
-		flex-direction: row;
 		.trending__image {
 			background-image: url("../../assets/japanese_sushi.png");
 		}
@@ -718,13 +689,11 @@ flex: auto;
 		width: 100%;
 		min-height: 640px;
 		display: flex;
-		flex-direction: row;
 	}
 	&__content {
 		flex: 1;
 		display: flex;
 		justify-content: center;
-		flex-direction: column;
 		padding: 32px 64px;
 	}
 	&__list {
@@ -735,17 +704,16 @@ flex: auto;
 			flex: 1;
 			display: flex;
 			align-items: center;
-			flex-direction: row;
 			gap: 12px;
 			min-width: 210px;
 		}
 		p {
-		@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
+			@include text(16px, $font-weight-base, $plus-jakarta-sans, $secondary-color);
 			flex: 1;
 		}
 	}
 	&__icon {
-	@extend %flex-center;
+		@extend %flex-center;
 		width: 24px;
 		height: 24px;
 		border-radius: 100%;
@@ -757,10 +725,9 @@ flex: auto;
 		}
 	}
 	&__image {
-	@extend %flex-center;
-	@include customBackground(none, $color-white);
+		@extend %flex-center;
+		@include customBackground(none, $color-white);
 		flex: 1;
-		position: relative;
 		padding: 32px 64px;
 		img {
 			width: 254px;
@@ -774,42 +741,27 @@ flex: auto;
 		}
 	}
 	&__arrow {
-		position: absolute;
 		z-index: 1;
 		img {
 			object-fit: contain;
+			width: auto;
+			height: 100%;
 		}
 		&-left {
 			left: -2.5px;
 			top: 12%;
-			img {
-				width: auto;
-				height: 100%;
-			}
 		}
 		&-top {
-			img {
-				width: auto;
-				height: 100%;
-			}
-			top: -10.5px;
-			left: 12%;
+			top: 629px;
+			left: 7%;
 		}
 		&-bottom {
 			bottom: -6.5px;
 			right: 12%;
-			img {
-				width: 100%;
-				height: auto;
-			}
 		}
 		&-right {
-			img {
-				width: 100%;
-				height: auto;
-			}
-			right: -2.5px;
-			bottom: 12%;
+			right: 636.5px;
+			bottom: 5%;
 		}
 	}
 }
@@ -819,7 +771,6 @@ flex: auto;
 	@extend %flex-center;
 	@include customBackground(url('../../assets/subscribe_bg.png'));
 	padding: 64px;
-	flex-direction: column;
 	overflow: hidden;
 	h2 {
 		@include text(88px, $font-weight-bolder, $playfair-display, $color-white);
@@ -836,7 +787,6 @@ flex: auto;
 		margin-top: 40px;
 		padding: 14px 14px 14px 24px;
 		display: flex;
-		gap: 10px;
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		border-radius: 46px;
 		input {
@@ -872,14 +822,11 @@ flex: auto;
 	padding: 20px 40px;
 	background: $color-white;
 	flex-wrap: wrap;
-	gap: 20px;
 	overflow: hidden;
 	ul {
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
-		flex-direction: row;
-		gap: 64px;
 		&:last-child {
 			gap: 32px;
 		}

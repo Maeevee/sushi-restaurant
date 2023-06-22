@@ -1,0 +1,44 @@
+@use 'sass:math';
+
+$utilities: (
+    "flex-direction": (
+        "prefix": "f-direction",
+        "values": (
+            "r": row,
+            "c": column
+        )
+    ),
+    "position": (
+        "prefix": "position",
+        "values": (
+            "r": relative,
+            "a": absolute
+        )
+    ),
+    "gap": (
+        "prefix": "gap",
+        "values": (
+            "bs": $gap-base,
+            "sm": $gap-sm,
+            "md": $gap-md,
+            "lg": $gap-lg
+        )
+    ),
+);
+
+@each $property, $map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+        @if($k == "default") {
+            .#{$prefix} {
+            #{$property}: $v;
+            }
+        } @else {
+            .#{$prefix}-#{$k}{
+            #{$property}: $v;
+            }
+        }
+    }
+}
