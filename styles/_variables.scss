@@ -23,3 +23,15 @@ $font-weight-light: $font-weight-base - 200; // 300
 // Opacity
 $opacity-medium: 0.8;
 $opacity-light: math.div($opacity-medium, 1.6); // 0,5
+
+//Background collection
+$popular-foods-btn-bg: (
+    sushi: "../assets/sushi-9.png",
+    ramen: "../assets/sushi-8.png",
+    udon: "../assets/sushi-7.png",
+    danggo: "../assets/sushi-6.png",
+    maki: "../assets/sushi-5.png",
+    drinks: "../assets/sushi-4.png",
+    sashimi: "../assets/sushi-3.png",
+    nigiri: "../assets/sushi-2.png"
+);

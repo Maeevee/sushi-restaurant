@@ -42,6 +42,8 @@ align-items: $align-items;
 }
 
 
+
+
 * {
 margin: 0;
 padding: 0;
@@ -560,8 +562,8 @@ flex: auto;
 	gap: 24px;
 }
 .popular-foods__filter-btn {
-@include text(16px, $font-weight-light, $plus-jakarta-sans, $color-white);
-	padding: 10px 28px;
+@include text(14px, $font-weight-light, $plus-jakarta-sans, $color-white);
+	padding: 3px 14px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -571,19 +573,20 @@ flex: auto;
 	border-radius: 46px;
 	line-height: 25px;
 	cursor: pointer;
-	img {
-		width: 36px;
-		height: 36px;
-		object-fit: contain;
-	}
 	&:hover {
 		background: #fff;
 		color: $primary-color;
 	}
 }
-.popular-foods__filter-btn.active {
-	background: #fff;
-	color: $primary-color;
+@each $button, $background in $popular-foods-btn-bg {
+	.popular-foods__filter-btn-#{$button}-icon {
+		width: 36px;
+		height: 36px;
+		background: url("#{$background}") no-repeat;
+		background-size: contain;
+		background-position: center;
+		display: flex;
+	}
 }
 .popular-foods__catalogue {
 @include displayFlex (center, flex-end);
